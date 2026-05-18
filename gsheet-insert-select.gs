@@ -106,7 +106,8 @@ function doPost(e) {
       return createJsonResponse({ status: "error", message: "Unauthorized. Invalid token." }, 401);
     }
 
-    var spreadsheetId = payload.spreadsheet_id || null; 
+    // var spreadsheetId = payload.spreadsheet_id || null; 
+    var spreadsheetId = null; 
     var sheetName = payload.sheet_name || "Sheet1"; 
 
     var ss = spreadsheetId ? SpreadsheetApp.openById(spreadsheetId) : SpreadsheetApp.getActiveSpreadsheet();
